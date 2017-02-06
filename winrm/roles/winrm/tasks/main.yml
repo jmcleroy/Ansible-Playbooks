@@ -1,0 +1,15 @@
+---
+- name: Create Folder
+  win_file:
+    path: C:\temp\
+    state: directory
+
+- name: Change permissions
+  win_acl:
+    path: C:\temp
+    user: EXAMPLE\ansible
+    rights: FullControl
+    type: allow
+    state: present
+    inherit: ContainerInherit, ObjectInherit
+    propagation: 'None'
