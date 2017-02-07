@@ -12,4 +12,11 @@
       - 50 permit ip host 5.5.5.5 any log
     parents: ip access-list extended test
     before: no ip access-list extended test
-    match: exact    
+    match: exact
+
+- name: run clock
+  ios_command:
+    host: "{{ inventory_hostname }}"
+    username: "{{ cisco_user }}"
+    password: "{{ cisco_password }}"
+    commands: show clock

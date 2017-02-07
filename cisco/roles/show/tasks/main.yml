@@ -1,0 +1,14 @@
+---
+- name: run clock
+  ios_command:
+    host: "{{ inventory_hostname }}"
+    username: "{{ cisco_user }}"
+    password: "{{ cisco_password }}"
+    commands: show clock
+
+- name: run version
+  ios_command:
+    host: "{{ inventory_hostname }}"
+    username: "{{ cisco_user }}"
+    password: "{{ cisco_password }}"
+    commands: show version
