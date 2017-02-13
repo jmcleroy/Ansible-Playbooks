@@ -1,0 +1,6 @@
+---
+- redhat_subscription:
+    state: present
+    username: '{{ vault_user }}'
+    password: '{{ vault_pass }}'
+    autosubscribe: true
