@@ -1,0 +1,8 @@
+---
+- hosts: all
+  gather_facts: False
+  connection: local
+
+  roles:
+   - { role: junos, when: "device_os == 'junos'" }
+   - { role: show, when: "device_os == 'ios'" }

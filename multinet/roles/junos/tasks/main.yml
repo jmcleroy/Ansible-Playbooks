@@ -1,0 +1,8 @@
+---
+- name: Show Version and Show interfaces
+  junos_command:
+    host: "{{ inventory_hostname }}"
+    username: "{{ junos_user }}"
+    password: "{{ junos_pass}}"
+    commands:
+      - show version
