@@ -6,4 +6,4 @@
     host: "{{ inventory_hostname }}"
     username: "{{ junos_user }}"
     password: "{{ junos_pass }}"
-
+    transport: cli
