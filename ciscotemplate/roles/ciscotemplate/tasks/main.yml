@@ -1,5 +1,5 @@
 ---
 - name: configure interface settings
   ios_config:
-    src: vars/interface.j2
+    src: vars/cisco3750.j2
     provider: "{{ cli }}"
