@@ -4,6 +4,6 @@
     lines:
       - delete firewall family inet filter Ansible-test term ansible then accept
     host: "{{ inventory_hostname }}"
-    username: "{{junos_user }}"
+    username: "{{ junos_user }}"
     password: "{{ junos_pass }}"
 
