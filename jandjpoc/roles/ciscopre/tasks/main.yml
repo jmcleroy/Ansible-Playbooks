@@ -1,0 +1,13 @@
+---
+- name: Show prechange status
+  ios_command:
+    commands:
+      - show cdp neighbor
+      - show ip interface brief
+      - show ip route summary
+      - show ip eigrp neighbor
+      - show ip bgp summary
+      - show ip bgp neighbor 
+      - show run
+      - show log
+    provider: '{{ cli }}'
