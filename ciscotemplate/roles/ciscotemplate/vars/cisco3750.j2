@@ -1,14 +1,122 @@
+no service pad
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname labcisco3750
+!
+no aaa new-model
+switch 2 provision ws-c3750g-24ts-1u
+system mtu routing 1500
+ip subnet-zero
+ip routing
+ip domain-name example.com
+!
+ip dhcp pool name
+   network 192.168.1.0 255.255.255.128
+!
+ip scp server enable
+!
+!
+!
+no file verify auto
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+interface GigabitEthernet2/0/1
+ no switchport
+ ip address 192.168.1.129 255.255.255.0
+!
 interface GigabitEthernet2/0/2
  description test1 interface
-
+!
 interface GigabitEthernet2/0/3
  description test2 interface
-
+!
 interface GigabitEthernet2/0/4
  description test3
-
+!
+interface GigabitEthernet2/0/5
+!
+interface GigabitEthernet2/0/6
+!
+interface GigabitEthernet2/0/7
+!
+interface GigabitEthernet2/0/8
+!
+interface GigabitEthernet2/0/9
+!
+interface GigabitEthernet2/0/10
+!
+interface GigabitEthernet2/0/11
+!
+interface GigabitEthernet2/0/12
+!
+interface GigabitEthernet2/0/13
+!
+interface GigabitEthernet2/0/14
+!
+interface GigabitEthernet2/0/15
+!
+interface GigabitEthernet2/0/16
+!
+interface GigabitEthernet2/0/17
+!
+interface GigabitEthernet2/0/18
+!
+interface GigabitEthernet2/0/19
+!
+interface GigabitEthernet2/0/20
+!
+interface GigabitEthernet2/0/21
+!
+interface GigabitEthernet2/0/22
+!
+interface GigabitEthernet2/0/23
+!
+interface GigabitEthernet2/0/24
+!
+interface GigabitEthernet2/0/25
+!
+interface GigabitEthernet2/0/26
+!
+interface GigabitEthernet2/0/27
+!
+interface GigabitEthernet2/0/28
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router bgp 101
+ bgp log-neighbor-changes
+ neighbor 192.168.1.131 remote-as 201
+ !
+ address-family ipv4
+ neighbor 192.168.1.131 activate
+ neighbor 192.168.1.131 send-community
+ neighbor 192.168.1.131 soft-reconfiguration inbound
+ no auto-summary
+ no synchronization
+ network 10.0.0.0 mask 255.255.255.0
+ exit-address-family
+!
+ip default-gateway 192.168.1.1
+ip classless
+ip route 10.0.0.0 255.255.255.0 Null0 200
+ip http server
+ip http secure-server
+!
+!
 ip access-list extended test
+ permit ip host 1.1.1.1 any log
  permit ip host 2.2.2.2 any log
  permit ip host 3.3.3.3 any log
  permit ip host 4.4.4.4 any log
  permit ip host 5.5.5.5 any log
+!
+!
+control-plane
