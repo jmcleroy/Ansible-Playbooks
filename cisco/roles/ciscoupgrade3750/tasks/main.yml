@@ -1,0 +1,4 @@
+---
+- name: Backup current configuration
+  ios_config
+
