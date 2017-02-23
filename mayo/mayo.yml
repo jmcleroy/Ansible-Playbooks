@@ -2,10 +2,10 @@
 - hosts: ios
   gather_facts: False
   connection: local
+  serial: 1
 
-  tasks:
-    - name: Copy file
-      ios_command:
-        - copy running-conf tftp
-        - 192.168.1.62
-      provider: '{{ cli }}'
+  roles:
+    - ciscopre
+    - ciscocopy
+    - ciscoupgrade
+    - ciscopre

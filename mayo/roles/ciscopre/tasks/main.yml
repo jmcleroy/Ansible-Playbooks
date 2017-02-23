@@ -2,18 +2,9 @@
 - name: Show prechange status
   ios_command:
     commands:
-      - show cdp neighbor
+      - show version
       - show ip interface brief
       - show ip route summary
-      - show ip eigrp neighbor
-      - show ip bgp summary
-      - show ip bgp neighbor {{ bgp_neig }} advertised-routes
-      - show ip bgp neighbor {{ bgp_neig }} received-routes
-#      - show ip bgp neighbor '{{ bgp_neig1 }}' advertised-routes
-#      - show ip bgp neighbor '{{ bgp_neig1 }}' received-routes
-#      - show ip bgp neighbor '{{ bgp_neig2 }}' advertised-routes
-#      - show ip bgp neighbor '{{ bgp_neig2 }}' received-routes
-      - show ip bgp
       - show run
       - show log
     provider: '{{ cli }}'
