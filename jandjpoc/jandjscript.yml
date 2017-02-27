@@ -1,7 +1,0 @@
----
-- hosts: ios
-  gather_facts: False
-  connection: local
-
-  roles:
-  - ciscopre
