@@ -1,0 +1,9 @@
+---
+- name: configure acl entries
+  eos_config:
+    lines: "{{ acl_entries.eos }}"
+    parents: "ip access-list {{ acl_name }}"
+    match: exact
+    replace: block
+    provider: "{{ cli }}"
+    before: "no ip access-list {{ acl_name }}"

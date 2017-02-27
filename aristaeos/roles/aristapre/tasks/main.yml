@@ -1,0 +1,7 @@
+---
+- name: get output for multiple commands
+  eos_command:
+    commands:
+      - show version
+      - show interfaces
+    provider: "{{ cli }}"

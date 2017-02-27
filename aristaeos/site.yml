@@ -1,0 +1,7 @@
+---
+- hosts: eos
+  gather_facts: False
+  connection: local
+
+  roles:
+  - aristapre

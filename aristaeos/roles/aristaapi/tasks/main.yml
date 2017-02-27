@@ -1,0 +1,15 @@
+---
+- name: configure eapi
+  eos_eapi:
+    http: yes
+    http_port: 80
+    state: started
+    provider: "{{ cli }}"
+
+#- name: Show prechange status
+#  eos_command:
+#    commands:
+#      - show ip interface brief
+#      - show run
+#      - show log
+#    provider: '{{ cli }}'
