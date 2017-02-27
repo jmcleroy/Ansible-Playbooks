@@ -10,3 +10,4 @@
     commands:
       - "reload in 1\ny"
     provider: "{{ cli }}"
+  ignore_errors: yes
