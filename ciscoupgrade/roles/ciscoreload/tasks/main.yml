@@ -1,5 +1,5 @@
 ---
-- name: reload device
+- name: reload device now
   ios_command:
     commands:
       - "reload in 1\ny"
