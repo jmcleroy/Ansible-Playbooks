@@ -1,0 +1,11 @@
+---
+- name: Show Version and Show interfaces
+  ios_command:
+    host: "{{ inventory_hostname }}"
+    username: "{{ cisco_user }}"
+    password: "{{ cisco_password }}"
+    commands:
+      - show version
+      - show ip interface brief
+      - show run
+      - show bgp
