@@ -1,20 +1,18 @@
 ---
-- name: set backup_path fact
+- name: backup running-config from ios device
+  ios_command:
+    commands: show running-config
+    provider: "{{ cli }}"
+  register: config
+
+- name: set backup_file fact
   set_fact:
-    backup_path: "{{ playbook_dir }}/backup"
+    backup_file: "{{ backup_path }}/{{ inventory_hostname }}/running-config"
 
-- name: create backup paths
-  file:
-    path: "{{ backup_path }}"
-    state: directory
-  run_once: yes
-  delegate_to: localhost
+- name: write backup to file
+  copy:
+    content: "{{ config.stdout[0] }}"
+    dest: "{{ backup_file }}"
 
-- name: create backup paths
-  file:
-    path: "{{ backup_path }}/{{ inventory_hostname }}"
-    state: directory
-  delegate_to: localhost
-
-- name: include device specific tasks
-include: "{{ device_os }}.yml"
+- name: display backup_file path
+  debug: var=backup_file
