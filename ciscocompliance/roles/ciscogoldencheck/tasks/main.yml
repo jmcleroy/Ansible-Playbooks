@@ -1,0 +1,5 @@
+---
+- name: configure interface settings
+  ios_config:
+    src: "{{ playbook_dir }}/backup/{{ inventory_hostname }}/running-config"
+    provider: "{{ cli }}"
