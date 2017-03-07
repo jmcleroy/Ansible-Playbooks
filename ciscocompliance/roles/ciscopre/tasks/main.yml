@@ -1,0 +1,22 @@
+---
+- name: backup running-config from ios device
+  ios_command:
+    commands: show running-config
+    provider: "{{ provider }}"
+  register: config
+  provider: "{{ cli }}"
+
+- name: set backup_file fact
+  set_fact:
+    backup_file: "{{ backup_path }}/{{ inventory_hostname }}/running-config"
+  provider: "{{ cli }}"
+
+- name: write backup to file
+  copy:
+    content: "{{ config.stdout[0] }}"
+    dest: "{{ backup_file }}"
+  provider: "{{ cli }}"
+
+- name: display backup_file path
+  debug: var=backup_file
+  provider: "{{ cli }}"
