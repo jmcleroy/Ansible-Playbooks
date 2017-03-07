@@ -17,4 +17,4 @@
   delegate_to: localhost
 
 - name: include device specific tasks
-include: "{{ device_os }}.yml"
+  include: "{{ device_os }}.yml"
