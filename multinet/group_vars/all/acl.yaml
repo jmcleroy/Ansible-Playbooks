@@ -1,0 +1,11 @@
+---
+acl_name: DEMO_ACL
+
+acl_entries:
+  eos:
+    - 10 permit ip 172.31.10.0/24 any
+    - 20 permit ip 172.31.11.0/24 any
+    - 30 permit ip 172.31.12.0/24 any
+    - 40 permit ip 172.31.13.0/24 any
+    - 50 permit ip 172.31.14.0/24 any
+    - 60 permit ip 172.31.15.0/24 any
