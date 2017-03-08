@@ -1,0 +1,9 @@
+---
+- name: setup snmp
+  ios_config:
+    host: "{{ inventory_hostname }}"
+    username: "{{ cisco_user }}"
+    password: "{{ cisco_password }}"
+    lines:
+      - snmp-server community public RO
+    match: exact

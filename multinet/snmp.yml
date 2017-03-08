@@ -1,0 +1,8 @@
+---
+- hosts: all
+  gather_facts: False
+  connection: local
+
+  roles:
+   - { role: junossnmp, when: "device_os == 'junos'" }
+   - { role: ciscosnmp, when: "device_os == 'ios'" }
