@@ -1,0 +1,14 @@
+---
+- name: setup snmp
+  junos_config:
+    lines:
+      - set snmp community test
+      - set snmp community public
+      - set authorization read-only
+      - set clients address 192.168.1.0/24
+      - set clients 0/0 restrict
+      - set apply-groups global
+    host: "{{ inventory_hostname }}"
+    username: "{{ junos_user }}"
+    password: "{{ junos_pass }}"
+    transport: netconf
