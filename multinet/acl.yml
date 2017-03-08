@@ -6,3 +6,4 @@
   roles:
    - { role: junosacl, when: "device_os == 'junos'" }
    - { role: ciscoacl, when: "device_os == 'ios'" }
+   - { role: aristaacl when: "device_os == 'eos'" }
