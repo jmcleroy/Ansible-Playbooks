@@ -1,6 +1,5 @@
 ---
 - name: setup snmp
   iosxr_config:
-    lines:
-      - snmp-server community public RO
+    lines: snmp-server community public RO
     provider: '{{ cli }}'
