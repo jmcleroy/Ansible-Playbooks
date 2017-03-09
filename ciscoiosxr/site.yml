@@ -4,5 +4,4 @@
   connection: local
 
   roles:
-   - { role: junosver, when: "device_os == 'junos'" }
    - { role: ciscover, when: "device_os == 'iosxr'" }
