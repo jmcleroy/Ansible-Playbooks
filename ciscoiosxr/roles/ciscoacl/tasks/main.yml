@@ -2,11 +2,8 @@
 - name: configure interface settings
   iosxr_config:
     lines:
-      - ipv4 access-list extended remark test 10 permit ip host 1.1.1.1 any log
-      - ipv4 access-list extended remark test 20 permit ip host 2.2.2.2 any log
-      - ipv4 access-list extended remark test 30 permit ip host 3.3.3.3 any log
-      - ipv4 access-list extended remark test 40 permit ip host 4.4.4.4 any log
-      - ipv4 access-list extended remark test 50 permit ip host 5.5.5.5 any log
+      - description Moody's Test
+    parent: interface GigabitEthernet0/0/0/0
     match: none
     config: no
     provider: '{{ cli }}'
