@@ -3,5 +3,5 @@
   iosxr_command:
     commands:
       - show version
-      - show running-configuration
+      - show run
     provider: '{{ cli }}'
