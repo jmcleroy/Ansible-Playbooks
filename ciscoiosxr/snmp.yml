@@ -5,3 +5,4 @@
 
   roles:
    - { role: ciscosnmp, when: "device_os == 'iosxr'" }
+
