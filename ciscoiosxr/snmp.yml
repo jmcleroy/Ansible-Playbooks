@@ -5,4 +5,4 @@
 
   roles:
    - { role: junossnmp, when: "device_os == 'junos'" }
-   - { role: ciscosnmp, when: "device_os == 'ios'" }
+   - { role: ciscosnmp, when: "device_os == 'iosxr'" }
