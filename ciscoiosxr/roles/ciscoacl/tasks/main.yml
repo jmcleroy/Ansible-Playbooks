@@ -8,6 +8,4 @@
       - 40 permit ip host 4.4.4.4 any log
       - 50 permit ip host 5.5.5.5 any log
     parents: ipv4 access-list extended test
-    before: no ipv4 access-list extended test
-    match: exact
     provider: '{{ cli }}'
