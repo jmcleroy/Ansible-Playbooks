@@ -1,0 +1,7 @@
+---
+- name: setup snmp
+  ios_config:
+    lines:
+      - snmp-server community public RO
+    match: exact
+    provider: '{{ cli }}'
