@@ -1,9 +1,6 @@
 ---
 - name: configure interface settings
   iosxr_config:
-    lines:
-      - description Moody's Test
-    parents: interface GigabitEthernet0/0/0/0
-    match: none
-    config: no
+    src: vars/interface.j2
+    force: yes
     provider: '{{ cli }}'
