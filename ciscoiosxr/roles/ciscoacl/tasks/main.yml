@@ -7,6 +7,6 @@
       - 30 permit ip host 3.3.3.3 any log
       - 40 permit ip host 4.4.4.4 any log
       - 50 permit ip host 5.5.5.5 any log
-    parents: ip access-list extended remark test
+    parents: ipv4 access-list extended remark test
     match: none
     provider: '{{ cli }}'
