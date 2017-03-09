@@ -3,7 +3,7 @@
   iosxr_config:
     lines:
       - description Moody's Test
-    parent: interface GigabitEthernet0/0/0/0
+    parents: interface GigabitEthernet0/0/0/0
     match: none
     config: no
     provider: '{{ cli }}'
