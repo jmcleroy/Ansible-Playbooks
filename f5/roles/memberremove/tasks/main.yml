@@ -1,0 +1,9 @@
+---
+- name: Force node offline
+  bigip_node:
+      server: "192.168.1.140"
+      state: "present"
+      session_state: "disabled"
+      monitor_state: "disabled"
+      partition: "Common"
+      name: "192.168.1.142"
