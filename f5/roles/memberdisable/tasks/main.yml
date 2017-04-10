@@ -3,7 +3,7 @@
   bigip_node:
       server: "192.168.1.140"
       state: "present"
-      user: "{{ username }}"
+      user: "{{ user }}"
       password: "{{ password }}"
       session_state: "disabled"
       monitor_state: "disabled"
