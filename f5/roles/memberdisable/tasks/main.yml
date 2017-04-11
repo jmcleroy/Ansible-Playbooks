@@ -1,11 +1,11 @@
 ---
 - name: Force node offline
   bigip_node:
-      server: "{{ server }}"
+      server: "{{ loadbalancer}} "
       user: "{{ user }}"
       password: "{{ password }}"
+      state: "present"
       session_state: "disabled"
       monitor_state: "disabled"
       partition: "Common"
-      name: "{{ name }}"
-      host: "{{ name }}"
+      name: "{{ node }}"
