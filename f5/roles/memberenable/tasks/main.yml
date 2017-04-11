@@ -9,4 +9,4 @@
       monitor_state: "enabled"
       partition: "Common"
       host: "{{ host }}"
-      name: "{{ member_name }}"
+      name: "{{ host }}"
