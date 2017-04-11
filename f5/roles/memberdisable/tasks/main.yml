@@ -8,5 +8,5 @@
       session_state: "disabled"
       monitor_state: "disabled"
       partition: "Common"
-      host: "{{ member_name }}"
+      host: "{{ host }}"
       name: "{{ member_name }}"
