@@ -4,6 +4,7 @@
     hostname: "192.168.1.207"
     datacenter: "CF"
     name: "Wordpress1"
+    state: "Present"
     username: "administrator@vsphere.local"
     password: "{{ vcenter_password }}"
   register: "facts"
