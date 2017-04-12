@@ -1,6 +1,6 @@
 ---
 - name: Testing Vmware Facts
-  vmware_guest_facts:
+  vmware_guest:
     hostname: "192.168.1.207"
     datacenter: "CF"
     name: "Wordpress1"
