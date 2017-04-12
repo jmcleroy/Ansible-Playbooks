@@ -1,9 +1,9 @@
 ---
 - name: Testing Vmware Facts
   vmware_guest_facts:
-    hostname: 192.168.1.207
-    datacenter: CF
-    name: Wordpress1
-    username: administrator@vsphere.local
+    hostname: "192.168.1.207"
+    datacenter: "CF"
+    name: "Wordpress1"
+    username: "administrator@vsphere.local"
     password: "{{ vcenter_password }}"
-  register: facts
+  register: "facts"
