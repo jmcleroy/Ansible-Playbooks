@@ -1,6 +1,7 @@
 ---
 - name: Testing Vmware Facts
-  vmware_vm_facts:
+  vmware_guest_facts:
     hostname: 192.168.1.207
     username: administrator@vsphere.local
     password: "{{ vcenter_password }}"
+  register: facts
