@@ -8,3 +8,4 @@
       - show version
       - show ip interface brief
       - show run
+    delegate_to: 192.168.1.175
