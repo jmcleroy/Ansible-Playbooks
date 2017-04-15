@@ -1,6 +1,7 @@
 ---
 - name: Show Version and Show interfaces
   ios_command:
+    delegate_to: 192.168.1.175
     host: "{{ inventory_hostname }}"
     username: "{{ cisco_user }}"
     password: "{{ cisco_password }}"
@@ -8,4 +9,4 @@
       - show version
       - show ip interface brief
       - show run
-  delegate_to: 192.168.1.175
+
