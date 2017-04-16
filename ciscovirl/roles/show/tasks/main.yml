@@ -2,7 +2,7 @@
 - name: Show Version and Show interfaces
   ios_command:
     run_once: true
-    delegate_to: 192.168.1.175
+    delegate_to: jump
     host: "{{ inventory_hostname }}"
     username: "{{ cisco_user }}"
     password: "{{ cisco_password }}"
