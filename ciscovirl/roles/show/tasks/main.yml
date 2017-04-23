@@ -1,6 +1,6 @@
 ---
 - name: Show Version and Show interfaces
-  ios_command:
+  nxos_command:
     run_once: true
     delegate_to: jump
     host: "{{ inventory_hostname }}"
