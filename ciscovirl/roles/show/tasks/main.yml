@@ -1,6 +1,6 @@
 ---
 - name: Show Version and Show interfaces
-  iosxr_command:
+  ios_command:
     host: "{{ inventory_hostname }}"
     commands:
       - show version
