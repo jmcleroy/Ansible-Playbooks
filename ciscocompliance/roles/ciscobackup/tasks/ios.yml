@@ -2,6 +2,7 @@
 - name: backup running-config from ios device
   ios_command:
     commands: show running-config
+    provider: "{{ cli }}"
   register: config
 
 - name: set backup_file fact
