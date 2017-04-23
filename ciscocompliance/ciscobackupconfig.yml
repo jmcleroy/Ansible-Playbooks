@@ -1,7 +1,7 @@
 ---
 - hosts: all
   gather_facts: False
-  connection: local
+  connection: network_cli
 
   roles:
   - ciscobackup
