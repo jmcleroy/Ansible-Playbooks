@@ -1,6 +1,6 @@
 ---
-vcenter_hostname: vcenter.lab.transunion.com
-vcenter_datacenter: Public Lab
-vcenter_cluster: Public_Cluster
-quarantine_network: Quarantine
-quest_network_name: LACP_NSX_Server_App
+vcenter_hostname: 192.168.1.207
+vcenter_datacenter: CF
+vcenter_cluster: 192.168.1.201
+quarantine_network: VM Network 2
+quest_network_name: VM Network
