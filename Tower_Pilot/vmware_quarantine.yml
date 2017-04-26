@@ -1,0 +1,18 @@
+---
+- name: Gather VM info
+  hosts: all
+  tasks:
+    - name: Store original IP address
+      set_fact:
+        guest_mac: "{{ hostvars[guest_name].ansible_default_ipv4.macaddress }}"
+        guest_netmask: "{{ hostvars[guest_name].ansible_default_ipv4.netmask }}"
+        guest_gateway: "{{ hostvars[guest_name].ansible_default_ipv4.gateway }}"
+        guest_dns: "{{ hostvars[guest_name].ansible_dns.nameservers }}"
+
+- name: VMware Quarantine Playbook
+  hosts: all
+  gather_facts: False
+  connection: local
+    
+  roles:
+  - vm_quarantine

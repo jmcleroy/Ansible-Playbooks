@@ -1,0 +1,70 @@
+---
+# VMWare: Quarantine  
+- name: Check guest name
+  fail:
+    msg: Missing guest_name required variable
+  when: guest_name is not defined
+
+- name: Check template name
+  fail:
+    msg: Missing template_name required variable
+  when: template_name is not defined  
+
+- name: Set guest facts
+  set_fact:
+    guest_facts: "{{ hostvars[guest_name] }}" 
+ 
+- name: Store facts about the original VM
+  set_fact:
+    guest_ip: "{{ guest_facts.guest.ipaddress }}"
+    guest_name_quarantine: "{{ guest_name }}_quarantine"
+    guest_uuid: "{{ guest_facts.config.uuid }}"
+    guest_host: "{{ guest_facts.runtime.host.name }}"
+
+- name: Change NIC to protected VLAN
+  vmware_guest:
+    name: "{{ guest_name }}"
+    state: present
+    datacenter: "{{ vcenter_datacenter }}"
+    cluster: "{{ vcenter_cluster }}"
+    hostname: "{{ vcenter_hostname }}"
+    networks:
+    - name: "{{ quarantine_network }}"
+
+- name: Suspend old guest
+  vmware_guest:
+    name: "{{ guest_name }}"
+    uuid: "{{ guest_uuid }}"
+    state: suspended
+
+- name: Rename old guest
+  vmware_guest:
+    uuid: "{{ guest_uuid }}"
+    state: present
+    name: "{{ guest_name_quarantine }}"
+
+- name: Build new VM from snapshot w/ original MAC address
+  vmware_guest:
+    template: "{{ template_name }}"
+    name: "{{ guest_name }}"
+    snapshot_src: "{{ guest_snapshot }}"
+    state: poweredon
+    datacenter: "{{ vcenter_datacenter }}"
+    cluster: "{{ vcenter_cluster }}"
+    hostname: "{{ vcenter_hostname }}"
+    networks:
+    - name: "{{ quest_network_name }}"
+      ip: "{{ guest_ip }}"
+      netmask: "{{ guest_netmask }}"
+      mac: "{{ guest_mac }}"
+      gateway: "{{ guest_gateway }}"
+      dns_servers: "{{ guest_dns }}"
+    customization:
+      hostname: "{{ guest_name }}"
+    wait_for_ip_address: true
+
+
+# - name: Validate build
+# 
+# After this, you can add any playbooks / roles that will recofigure any necessary software on the new machine
+#
