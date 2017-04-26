@@ -56,7 +56,7 @@
     - name: "{{ quest_network_name }}"
       ip: "{{ guest_ip }}"
       netmask: "{{ guest_netmask }}"
-      mac: "{{ guest_mac }}"
+      #mac: "{{ guest_mac }}"
       gateway: "{{ guest_gateway }}"
       dns_servers: "{{ guest_dns }}"
     customization:
