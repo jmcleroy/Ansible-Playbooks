@@ -15,4 +15,6 @@
   connection: local
     
   roles:
+  - memberdisable
   - vm_quarantine
+  - memberenable
