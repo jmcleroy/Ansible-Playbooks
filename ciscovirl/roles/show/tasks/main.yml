@@ -1,9 +1,7 @@
 ---
 - name: Show Version and Show interfaces
-  ios_command:
+  nxos_command:
     host: "{{ inventory_hostname }}"
-    username: "{{ cisco_user }}"
-    password: "{{ cisco_password }}"
     commands:
       - show version
       - show ip interface brief

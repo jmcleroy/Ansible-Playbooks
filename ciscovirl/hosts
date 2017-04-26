@@ -2,3 +2,5 @@
 [ios]
 172.16.1.11
 
+[nxos:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q 192.168.1.175"'
