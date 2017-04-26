@@ -2,4 +2,4 @@
 device_os: ios
 provider:
       host: "{{ inventory_hostname }}"
-      transport: cli
+#      transport: cli
