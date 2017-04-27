@@ -3,7 +3,6 @@
   ios_command:
     host: "{{ inventory_hostname }}"
     commands:
-      - show version
       - show ip interface brief
-      - show run
-      - show bgp
+    wait_for:
+      - result[0] contains interface FastEthernet1/0/15 up up
