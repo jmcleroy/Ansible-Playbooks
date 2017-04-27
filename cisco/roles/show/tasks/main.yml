@@ -5,4 +5,4 @@
     commands:
       - show ip interface brief
     wait_for:
-      - result contains interface FastEthernet1/0/15 up up
+      - result [0] contains FastEthernet1/0/15 down
