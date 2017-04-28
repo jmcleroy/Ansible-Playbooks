@@ -1,7 +1,7 @@
 ---
 - name: Show Version and Show interfaces
-  nxos_config:
+  nxos_interface:
     host: "{{ inventory_hostname }}"
-    lines: "{{ shut_noshut }}"
-    parents: 'interface "{{ interface }}"'
+    interface: "{{ interface }}"
+    admin_state: "{{ admin_state }}"
     transport: cli
