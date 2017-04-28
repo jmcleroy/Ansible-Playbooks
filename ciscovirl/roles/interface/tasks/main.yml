@@ -2,6 +2,6 @@
 - name: Show Version and Show interfaces
   nxos_config:
     host: "{{ inventory_hostname }}"
-    lines: "{{ admin_state }}"
+    lines: "{{ shut_noshut}}"
     parents: 'interface "{{ interface }}"'
     transport: cli
