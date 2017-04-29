@@ -10,5 +10,3 @@
     dest: any
     state: present
     transport: cli
-    username: cisco
-    password: cisco
