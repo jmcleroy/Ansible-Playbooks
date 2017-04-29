@@ -3,4 +3,5 @@
   nxos_config:
     src: "{{ playbook_dir }}/backup/{{ inventory_hostname }}/running-config"
     host: "{{ inventory_hostname }}"
+    match: none
 #    provider: "{{ cli }}"
