@@ -5,5 +5,4 @@
     host: "{{ inventory_hostname }}"
     match: line
     defaults: true
-    replace: block
 #    provider: "{{ cli }}"
