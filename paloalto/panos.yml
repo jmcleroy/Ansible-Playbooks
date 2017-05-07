@@ -13,5 +13,5 @@
       address: '1.1.1.1'
       type: 'ip-netmask'
       description: 'This is the test ansible object'
-#      tag: 'app0001-appsrv'
+      tag: 'app0001_appsrv'
       commit: true
