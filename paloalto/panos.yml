@@ -13,5 +13,4 @@
       address: '1.1.1.1'
       type: 'ip-netmask'
       description: 'This is the test ansible object'
-      tag: h_1.1.1.1
       commit: true
