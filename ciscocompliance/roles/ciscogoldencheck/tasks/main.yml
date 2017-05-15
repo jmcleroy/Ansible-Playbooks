@@ -4,5 +4,4 @@
     src: "{{ playbook_dir }}/backup/{{ inventory_hostname }}/running-config"
     host: "{{ inventory_hostname }}"
     match: line
-    defaults: true
-#    provider: "{{ cli }}"
+    provider: "{{ cli }}"
