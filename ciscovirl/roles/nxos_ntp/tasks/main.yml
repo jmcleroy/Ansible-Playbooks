@@ -12,4 +12,4 @@
     transport: cli
     lines:
       - ntp server 172.16.1.200
-      - ntp server 172.16.1.177
+      - ntp server 172.16.1.1
