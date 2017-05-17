@@ -1,6 +1,6 @@
 ---
-- name: agnostic show commands
-  "{{ my_module }}":
-    host: "{{ inventory_hostname }}"
-    commands: show version
+- name: Show prechange status
+  '{{ my_module }}':
+    commands:
+      - show cdp neighbor
 
