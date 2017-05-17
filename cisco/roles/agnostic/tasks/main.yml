@@ -2,8 +2,5 @@
 - name: agnostic show commands
   '{{ ver }}':
     host: "{{ inventory_hostname }}"
-    commands:
-    - show version
-    - show log
-    - show running
+    commands: show version
 
