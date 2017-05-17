@@ -1,6 +1,6 @@
 ---
 - name: agnostic show commands
-  '{{ ver }}'_command:
+  "{{ ver }}_command":
     host: "{{ inventory_hostname }}"
     commands:
     - show version
