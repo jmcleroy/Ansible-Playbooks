@@ -8,7 +8,6 @@
     lines:
       - "no ntp server {{ item }}"
     transport: cli
-
     force: yes
   with_items: "{{ _servers }}"
 
