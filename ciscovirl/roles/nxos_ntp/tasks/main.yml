@@ -11,9 +11,10 @@
 
 - name: remove old ntp servers
   nxos_config:
+  host: '{{ inventory_hostname }}'
     lines:
       - "no ntp server {{ item }}"
-    provider: "{{ provider }}"
+#    provider: "{{ provider }}"
     force: yes
   with_items: "{{ _servers }}"
 
