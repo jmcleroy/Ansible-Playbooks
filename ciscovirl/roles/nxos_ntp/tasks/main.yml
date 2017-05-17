@@ -4,8 +4,18 @@
 
 - name: remove old ntp servers
   nxos_config:
+    host: '{{ inventory_hostname }}'
     lines:
       - "no ntp server {{ item }}"
-    provider: "{{ provider }}"
+    transport: cli
+
     force: yes
   with_items: "{{ _servers }}"
+
+- name: add ntp servers
+  nxos_config:
+    host: '{{ inventory_hostname }}'
+    transport: cli
+    lines:
+      - ntp server server 0.us.pool.ntp.org
+      - ntp server server 1.us.pool.ntp.org
