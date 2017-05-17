@@ -6,12 +6,6 @@
 #    provider: "{{ cli }}"
   register: config
 
-- name: Default NTP
-  nxos_config:
-    host: '{{ inventory_hostname }}'
-    lines: no {{ item }}
-    with_items: "{{ config_lines | select('match', 'ntp *') | list }}"
-
 - name: add ntp servers
   nxos_config:
     host: '{{ inventory_hostname }}'
