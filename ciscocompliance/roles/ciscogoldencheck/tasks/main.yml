@@ -1,6 +1,6 @@
 ---
 - name: check compliance
-  nxos_config:
+  ios_config:
     src: "{{ playbook_dir }}/backup/{{ inventory_hostname }}/running-config"
     host: "{{ inventory_hostname }}"
     provider: "{{ cli }}"
