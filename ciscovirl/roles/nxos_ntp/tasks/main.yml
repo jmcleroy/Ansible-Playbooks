@@ -13,10 +13,10 @@
   when: "(item not in ntp_servers)"
   with_items: ""
   register: remove_ntp_server
-    nxos_config:
-      provider: ""
-      lines:
-        - "no "
+  nxos_config:
+    provider: ""
+    lines:
+      - "no "
 
 - name: add ntp servers
   nxos_config:
