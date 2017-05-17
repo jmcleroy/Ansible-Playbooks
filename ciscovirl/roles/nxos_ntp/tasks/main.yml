@@ -1,16 +1,4 @@
 ---
-#- name: get current configured ntp servers
-#  set_fact: _servers="{{ config | regex_findall('^ntp server (\S+) use-vrf (?!management)') }}"
-
-- name: remove old ntp servers
-  nxos_config:
-    host: '{{ inventory_hostname }}'
-    lines:
-      - no ntp server
-    transport: cli
-    force: yes
-#  with_items: "{{ _servers }}"
-
 - name: add ntp servers
   nxos_config:
     host: '{{ inventory_hostname }}'
