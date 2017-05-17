@@ -6,14 +6,11 @@
 #    provider: "{{ cli }}"
   register: config
 
-- name: "REMOVE NTP SERVER"
-  when: "(item not in ntp_servers)"
-  with_items: ""
-  register: remove_ntp_server
+- name: Default NTP
   nxos_config:
-    provider: ""
-    lines:
-      - "no "
+    host: '{{ inventory_hostname }}'
+    lines: no {{ item }}
+    with_items: "{{ config_lines | select('match', 'ntp *') | list }}"
 
 - name: add ntp servers
   nxos_config:
