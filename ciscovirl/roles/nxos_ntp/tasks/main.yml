@@ -1,4 +1,14 @@
 ---
+- name: "GET NTP CONFIGURATION"
+  register: get_ntp_config
+  ios_command:
+    provider: ""
+    commands:
+      - "show running-config | include clock timezone"
+      - "show running-config | include clock summer-time"
+      - "show running-config | include ntp source"
+      - "show running-config | include ntp server"
+
 - name: "SET NTP SERVER"
   when: "(item not in get_ntp_config.stdout_lines[3])"
   with_items: ""
