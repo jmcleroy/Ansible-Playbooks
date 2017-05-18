@@ -1,35 +1,15 @@
 ---
-- name: "GET NTP CONFIGURATION"
-  register: get_ntp_config
-  host: '{{ inventory_hostname }}'
-  ios_command:
-    provider: ""
-    commands:
-      - "show running-config | include clock timezone"
-      - "show running-config | include clock summer-time"
-      - "show running-config | include ntp source"
-      - "show running-config | include ntp server"
+- name: register variable
+  nxos_command:
+    commands: show running-config
+    host: "{{ inventory_hostname }}"
+#    provider: "{{ cli }}"
+  register: config
 
-- name: "SET NTP SERVER"
-  when: "(item not in get_ntp_config.stdout_lines[3])"
-  with_items: ""
-  host: '{{ inventory_hostname }}'
-  register: set_ntp_server
+- name: add ntp servers
   nxos_config:
-    provider: ""
+    host: '{{ inventory_hostname }}'
+    transport: cli
     lines:
-      - ""
-
-- name: "POSTPONE CONFIGURATION SAVE"
-  when: "(set_ntp_server.changed == true)"
-  set_fact: configured=true
-
-- name: "REMOVE NTP SERVER"
-  when: "(item not in ntp_servers)"
-  with_items: ""
-  host: '{{ inventory_hostname }}'
-  register: remove_ntp_server
-  nxos_config:
-    provider: ""
-    lines:
-      - "no "
+      - ntp server 172.16.1.200
+      - ntp server 172.16.1.1
