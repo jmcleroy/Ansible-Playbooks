@@ -1,15 +1,22 @@
 ---
-- name: register variable
-  nxos_command:
-    commands: show running-config
-    host: "{{ inventory_hostname }}"
-#    provider: "{{ cli }}"
-  register: config
+- name: "SET NTP SERVER"
+  when: "(item not in get_ntp_config.stdout_lines[3])"
+  with_items: ""
+  register: set_ntp_server
+    ios_config:
+      provider: ""
+      lines:
+        - ""
 
-- name: add ntp servers
-  nxos_config:
-    host: '{{ inventory_hostname }}'
-    transport: cli
-    lines:
-      - ntp server 172.16.1.200
-      - ntp server 172.16.1.1
+- name: "POSTPONE CONFIGURATION SAVE"
+  when: "(set_ntp_server.changed == true)"
+  set_fact: configured=true
+
+- name: "REMOVE NTP SERVER"
+  when: "(item not in ntp_servers)"
+  with_items: ""
+  register: remove_ntp_server
+    ios_config:
+      provider: ""
+      lines:
+        - "no "
