@@ -1,6 +1,7 @@
 ---
 - name: "GET NTP CONFIGURATION"
   register: get_ntp_config
+  host: '{{ inventory_hostname }}'
   ios_command:
     provider: ""
     commands:
@@ -12,6 +13,7 @@
 - name: "SET NTP SERVER"
   when: "(item not in get_ntp_config.stdout_lines[3])"
   with_items: ""
+  host: '{{ inventory_hostname }}'
   register: set_ntp_server
   nxos_config:
     provider: ""
@@ -25,6 +27,7 @@
 - name: "REMOVE NTP SERVER"
   when: "(item not in ntp_servers)"
   with_items: ""
+  host: '{{ inventory_hostname }}'
   register: remove_ntp_server
   nxos_config:
     provider: ""
