@@ -3,10 +3,10 @@
   when: "(item not in get_ntp_config.stdout_lines[3])"
   with_items: ""
   register: set_ntp_server
-    ios_config:
-      provider: ""
-      lines:
-        - ""
+  nxos_config:
+    provider: ""
+    lines:
+      - ""
 
 - name: "POSTPONE CONFIGURATION SAVE"
   when: "(set_ntp_server.changed == true)"
@@ -16,7 +16,7 @@
   when: "(item not in ntp_servers)"
   with_items: ""
   register: remove_ntp_server
-    ios_config:
-      provider: ""
-      lines:
-        - "no "
+  nxos_config:
+    provider: ""
+    lines:
+      - "no "
