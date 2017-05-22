@@ -3,5 +3,6 @@
   nxos_vlan:
     host: "{{ inventory_hostname }}"
     vlan_id: "{{ nxos_vlan }}"
-    state: present
+    admin_state: "{{ admin_state }}"
+    state: "{{ vlan_state }}"
     transport: cli
