@@ -2,6 +2,6 @@
 - name: Set VLAN
   nxos_vlan:
     host: "{{ inventory_hostname }}"
-    vlan_range: 11
+    vlan_range: "{{ nxos_vlan }}"
     state: present
     transport: cli
