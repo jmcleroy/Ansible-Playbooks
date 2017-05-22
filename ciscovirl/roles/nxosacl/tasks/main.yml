@@ -1,0 +1,12 @@
+---
+- name: Set Acl
+  nxos_acl:
+    host: "{{ inventory_hostname }}"
+    name: ANSIBLE
+    seq: 10
+    action: permit
+    proto: tcp
+    src: 1.1.1.1/24
+    dest: any
+    state: present
+    transport: cli

@@ -1,8 +1,8 @@
 ---
 - name: backup running-config from ios device
-  ios_command:
+  nxos_command:
     commands: show running-config
-    host: '{{ inventory_hostname }}'
+    host: "{{ inventory_hostname }}"
 #    provider: "{{ cli }}"
   register: config
 

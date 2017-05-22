@@ -4,4 +4,4 @@
   connection: local
 
   roles:
-  - ciscopre
+  - nxos_ntp

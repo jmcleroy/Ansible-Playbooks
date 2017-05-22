@@ -8,5 +8,5 @@
       session_state: "enabled"
       monitor_state: "enabled"
       partition: "Common"
-      host: "{{ host_ip }}"
-      name: "{{ member_name }}"
+      host: "192.168.1.142"
+      name: "Test_server1"

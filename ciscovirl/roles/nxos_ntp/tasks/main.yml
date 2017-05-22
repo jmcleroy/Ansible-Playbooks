@@ -1,0 +1,15 @@
+---
+- name: register variable
+  nxos_command:
+    commands: show running-config
+    host: "{{ inventory_hostname }}"
+#    provider: "{{ cli }}"
+  register: config
+
+- name: add ntp servers
+  nxos_config:
+    host: '{{ inventory_hostname }}'
+    transport: cli
+    lines:
+      - ntp server 172.16.1.200
+      - ntp server 172.16.1.1

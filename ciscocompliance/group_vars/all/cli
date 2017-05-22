@@ -1,0 +1,4 @@
+---
+cli:
+  host: "{{ inventory_hostname }}"
+  transport: cli

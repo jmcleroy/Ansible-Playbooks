@@ -1,0 +1,6 @@
+---
+- name: Show prechange status
+  '{{ my_module }}':
+    commands:
+      - show cdp neighbor
+
