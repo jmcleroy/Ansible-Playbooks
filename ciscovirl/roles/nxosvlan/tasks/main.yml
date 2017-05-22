@@ -1,0 +1,7 @@
+---
+- name: Set VLAN
+  nxos_vlan:
+    host: "{{ inventory_hostname }}"
+    vlan_range: 11
+    state: present
+    transport: cli
