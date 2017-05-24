@@ -6,5 +6,4 @@
     guest: "{{ vm_name }}"
     vmware_guest_facts: yes
 
-- wait_for:
-    delay: 60
+- local_action: wait_for port=22 host="{{ ansible_ssh_host | default(inventory_hostname) }}" search_regex=OpenSSH delay=20
