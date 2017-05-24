@@ -9,4 +9,4 @@
     esxi:
       datacenter: CF
       hostname: 192.168.1.201
-  no_log: False
+  no_log: True
