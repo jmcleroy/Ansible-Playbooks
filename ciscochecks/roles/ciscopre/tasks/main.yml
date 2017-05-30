@@ -1,6 +1,7 @@
 ---
 - name: Show prechange status
   ios_command:
+    host: '{{ inventory_hostname }}'
     commands:
       - show cdp neighbor
       - show ip interface brief
@@ -16,4 +17,3 @@
       - show ip bgp
       - show run
 #      - show log
-    provider: '{{ cli }}'
