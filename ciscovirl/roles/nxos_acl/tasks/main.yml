@@ -1,7 +1,6 @@
 ---
 - name: Add ACL
   nxos_acl:
-    host: "{{ inventory_hostname }}"
     name: ANSIBLE
     seq: 10
     action: permit
