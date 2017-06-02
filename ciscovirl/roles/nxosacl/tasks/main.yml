@@ -1,12 +1,12 @@
 ---
-- name: Set Acl
-  nxos_acl:
+- name: configure interface settings
+  nxos_config:
     host: "{{ inventory_hostname }}"
-    name: ANSIBLE
-    seq: 10
-    action: permit
-    proto: tcp
-    src: 1.1.1.1/24
-    dest: any
-    state: present
-    provider: "{{ cli }}"
+    lines:
+      - 10 permit ip host 1.1.1.1 any log
+      - 20 permit ip host 2.2.2.2 any log
+      - 30 permit ip host 3.3.3.3 any log
+      - 40 permit ip host 4.4.4.4 any log
+      - 50 permit ip host 5.5.5.5 any log
+      - 60 permit ip host 6.6.6.6 any log
+    parents: ip access-list extended Ansible
