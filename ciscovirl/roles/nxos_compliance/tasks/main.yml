@@ -1,0 +1,5 @@
+---
+- name: Check compliance
+  nxos_config:
+    src: vars/nxos.j2
+    provider: "{{ cli }}"
