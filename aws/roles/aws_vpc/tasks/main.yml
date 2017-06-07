@@ -2,9 +2,10 @@
 - name: Create VPC AWS
   ec2_vpc_net:
     name: Eric-Ansible-Test
-    cidr_block: 10.4.0.0/16
-    region: us-east-1
+    cidr_block: "{{ cidr_block }}"
+    region: "{{ region }}"
+    state: present
     tags:
       module: ec2_vpc_net
       this: works
-    tenancy: dedicated
+    tenancy: default
