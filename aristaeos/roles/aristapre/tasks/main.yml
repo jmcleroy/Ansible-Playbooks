@@ -1,7 +1,8 @@
 ---
 - name: get output for multiple commands
   eos_command:
+    host: "{{ inventory_hostname }}"
     commands:
       - show version
       - show interfaces
-    provider: "{{ cli }}"
+

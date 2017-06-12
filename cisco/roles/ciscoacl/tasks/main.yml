@@ -2,8 +2,6 @@
 - name: configure interface settings
   ios_config:
     host: "{{ inventory_hostname }}"
-    username: "{{ cisco_user }}"
-    password: "{{ cisco_password }}"
     lines:
       - 10 permit ip host 1.1.1.1 any log
       - 20 permit ip host 2.2.2.2 any log

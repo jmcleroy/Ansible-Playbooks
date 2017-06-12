@@ -1,8 +1,7 @@
 ---
-- hosts: ios
+- hosts: all
   gather_facts: False
   connection: local
 
   roles:
-  - ciscobackup
-  - ciscogoldencheck
+  - agnostic

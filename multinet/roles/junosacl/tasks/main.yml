@@ -2,7 +2,7 @@
 - name: setup
   junos_config:
     lines:
-      - delete firewall family inet filter Ansible-test term ansible then accept
+      - delete firewall family inet filter {{ family }} term ansible then accept
       - set firewall family inet filter Ansible-test term ansible then accept
     host: "{{ inventory_hostname }}"
     username: "{{ junos_user }}"
