@@ -14,4 +14,3 @@
       type: 'ip-netmask'
       description: 'This is the test ansible object'
       commit: true
-      
