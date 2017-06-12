@@ -1,9 +1,9 @@
 ---
 - name: enable ntp
   cisco_ucs_ntp:
-    name: "192.168.1.176"
+    name: "{{ ntp_server }}"
     descr: Ansible managed NTP
     state: present
-    ucs_ip: "192.168.1.190"
+    ucs_ip: "{{ inventory_hostname }}"
     ucs_username: "ucspe"
     ucs_password: "ucspe"
