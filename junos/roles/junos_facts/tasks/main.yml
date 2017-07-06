@@ -1,0 +1,6 @@
+---
+- name: Gather Facts
+        junos_facts:
+        register: data
+
+- debug: msg="{{data}}"
