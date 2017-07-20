@@ -5,7 +5,7 @@
       state: "present"
       user: "{{ user }}"
       password: "{{ password }}"
-      session_state: "disabled"
+      session_state: "{{ session_state }}"
       monitor_state: "disabled"
       partition: "Common"
       host: "{{ host }}"
