@@ -1,0 +1,11 @@
+---
+- name: bcf leaf switch
+  bcf_switch:
+    name: "{{ item.leaf_name }}"
+    fabric_role: leaf
+    leaf_group: "{{ item.leaf_group }}"
+    mac: "{{ item.leaf_mac }}"
+    controller: '{{ inventory_hostname }}'
+    state: present
+    validate_certs: false
+  with_items: "{{ leafs }}"
