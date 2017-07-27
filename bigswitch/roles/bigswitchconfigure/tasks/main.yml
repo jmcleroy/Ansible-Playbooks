@@ -1,4 +1,15 @@
 ---
+---
+- name: bcf leaf switch
+  bcf_switch:
+    name: "{{ item.spine_name }}"
+    fabric_role: spine
+    mac: "{{ item.spine_mac }}"
+    controller: '{{ inventory_hostname }}'
+    state: present
+    validate_certs: false
+  with_items: "{{ spines }}"
+
 - name: bcf leaf switch
   bcf_switch:
     name: "{{ item.leaf_name }}"

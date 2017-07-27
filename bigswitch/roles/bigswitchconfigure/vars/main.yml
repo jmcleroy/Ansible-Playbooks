@@ -1,6 +1,10 @@
 spines:
-  - { name: SNMP-RO-NMNET, src: 10.169.64.0/18, dest: any, seq: 50, action: permit, proto: ip, state: present }
+  - { spine_name: spine0, spine_mac: '00:00:00:01:00:01' }
+  - { spine_name: spine1, spine_mac: '00:00:00:01:00:02' }
+
 
 leafs:
   - { leaf_name: leaf0a, leaf_group: leaf0 ,leaf_mac: '00:00:00:02:00:01' }
   - { leaf_name: leaf0b, leaf_group: leaf0 ,leaf_mac: '00:00:00:02:00:02' }
+  - { leaf_name: leaf1a, leaf_group: leaf1 ,leaf_mac: '00:00:00:02:00:03' }
+  - { leaf_name: leaf1b, leaf_group: leaf1 ,leaf_mac: '00:00:00:02:00:04' }
