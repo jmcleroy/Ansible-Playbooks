@@ -14,8 +14,6 @@
 
 - name: bcf leaf configure
   bcf_switch:
-    username: admin
-    password: admin
     name: "{{ item.leaf_name }}"
     fabric_role: leaf
     leaf_group: "{{ item.leaf_group }}"
