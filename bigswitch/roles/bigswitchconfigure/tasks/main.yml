@@ -19,5 +19,5 @@
     controller: '{{ inventory_hostname }}'
     state: present
     validate_certs: false
-    access_token: no
+    access_token: rrD7nEDOIdD8sDizFUUyPDBPvietcMH-
   with_items: "{{ leafs }}"
