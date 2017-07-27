@@ -1,0 +1,9 @@
+---
+- name: Gather Facts
+  bcf_get_facts:
+    controller: 172.16.1.201
+    username: admin
+    password: admin
+
+- name: DUMP FACTS TO TERMINAL
+  debug: var=bsnbcf
