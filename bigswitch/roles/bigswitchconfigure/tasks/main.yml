@@ -9,6 +9,7 @@
     controller: '{{ inventory_hostname }}'
     state: present
     validate_certs: false
+    access_token: no
   with_items: "{{ spines }}"
 
 - name: bcf leaf configure
@@ -22,4 +23,5 @@
     controller: '{{ inventory_hostname }}'
     state: present
     validate_certs: false
+    access_token: no
   with_items: "{{ leafs }}"
