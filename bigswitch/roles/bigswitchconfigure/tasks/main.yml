@@ -1,6 +1,5 @@
 ---
----
-- name: bcf leaf switch
+- name: bcf spine configure
   bcf_switch:
     name: "{{ item.spine_name }}"
     fabric_role: spine
@@ -10,7 +9,7 @@
     validate_certs: false
   with_items: "{{ spines }}"
 
-- name: bcf leaf switch
+- name: bcf leaf configure
   bcf_switch:
     name: "{{ item.leaf_name }}"
     fabric_role: leaf
