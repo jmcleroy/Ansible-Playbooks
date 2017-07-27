@@ -1,8 +1,6 @@
 ---
 - name: bcf spine configure
   bcf_switch:
-    username: admin
-    password: admin
     name: "{{ item.spine_name }}"
     fabric_role: spine
     mac: "{{ item.spine_mac }}"
