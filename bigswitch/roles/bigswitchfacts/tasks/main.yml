@@ -5,5 +5,3 @@
     username: admin
     password: admin
 
-- name: DUMP FACTS TO TERMINAL
-  debug: var=bsnbcf
