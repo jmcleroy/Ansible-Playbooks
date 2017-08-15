@@ -7,6 +7,6 @@
     from_template: yes
     template_src: rhel7.3
     esxi:
-      datacenter: CF
-      hostname: 192.168.1.201
+      datacenter: Datacenter
+      hostname: 192.168.1.203
   no_log: True
