@@ -1,8 +1,8 @@
 ---
 - name: create SSH service
   panos_service:
-    username: "{{ ansible_ssh_user }}"
-    password: "{{ ansible_ssh_pass }}"
+    username: "admin"
+    password: "admin"
     ip_address: '{{ inventory_hostname }}'
     service_name: "service-tcp-22"
     protocol: "tcp"
