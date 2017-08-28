@@ -1,8 +1,8 @@
 ---
 - name: create SSH service
   panos_service:
-    username: "{{ ANSIBLE_NET_USERNAME }}"
-    password: "{{ ANSIBLE_NET_PASSWORD }}"
+    username: "{{ ansible_net_username }}"
+    password: "{{ ansible_net_password }}"
     ip_address: "192.168.1.1"
     password: "admin"
     service_name: "service-tcp-22"
