@@ -1,11 +1,11 @@
 ---
 - name: Add an address object to the firewall
-   panos_address:
-     username: "{{ ANSIBLE_NET_USERNAME }}"
-     password: "{{ ANSIBLE_NET_PASSWORD }}"
-     ip_address: '{{ inventory_hostname }}'
-     address_name: 'h_1.1.1.1'
-     address: '1.1.1.1'
-     type: 'ip-netmask'
-     description: 'This is the test ansible object'
-     commit: true
+  panos_address:
+    username: "{{ ANSIBLE_NET_USERNAME }}"
+    password: "{{ ANSIBLE_NET_PASSWORD }}"
+    ip_address: '{{ inventory_hostname }}'
+    address_name: 'h_1.1.1.1'
+    address: '1.1.1.1'
+    type: 'ip-netmask'
+    description: 'This is the test ansible object'
+    commit: true
