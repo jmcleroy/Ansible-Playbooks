@@ -4,7 +4,6 @@
     username: "{{ ansible_ssh_user }}"
     password: "{{ ansible_ssh_pass }}"
     ip_address: '{{ inventory_hostname }}'
-    ip_address: "192.168.1.1"
     service_name: "service-tcp-22"
     protocol: "tcp"
     port: "22"
