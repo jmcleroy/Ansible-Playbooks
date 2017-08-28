@@ -1,8 +1,8 @@
 ---
 - name: Add an address object to the firewall
   panos_address:
-    username: "{{ ansible_net_username }}"
-    password: "{{ ansible_net_password }}"
+    username: "{{ ansible_net_user }}"
+    password: "{{ ansible_net_pass }}"
     ip_address: '{{ inventory_hostname }}'
     address_name: 'h_1.1.1.1'
     address: '1.1.1.1'
