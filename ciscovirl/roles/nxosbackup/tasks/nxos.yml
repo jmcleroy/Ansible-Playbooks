@@ -7,7 +7,7 @@
 
 - name: set backup_file fact
   set_fact:
-    backup_file: "{{ backup_path }}/{{ inventory_hostname }}/running-config.{{ date +%y_%m_%d }}"
+    backup_file: "{{ backup_path }}/{{ inventory_hostname }}/running-config"
 
 - name: write backup to file
   copy:
