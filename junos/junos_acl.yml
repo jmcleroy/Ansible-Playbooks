@@ -1,7 +1,8 @@
 ---
 - hosts: all
   gather_facts: False
-  connection: local
+#  connection: local
+
 
   roles:
   - junosacl
