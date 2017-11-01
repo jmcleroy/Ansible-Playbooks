@@ -4,3 +4,8 @@
   register: data
 
 - debug: msg="{{data}}"
+
+- name: show running configuration all
+  junos_command:
+    commands:
+      - show configuration
