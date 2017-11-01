@@ -1,0 +1,21 @@
+---
+- name: set backup_path fact
+  set_fact:
+    backup_path: "/tmp/backup"
+
+- name: create backup paths
+  file:
+    path: "{{ backup_path }}"
+    state: directory
+  run_once: yes
+  delegate_to: localhost
+
+- name: backup running-config from junos device
+  junos_command:
+    commands: show configuration
+  register: config
+
+- name: write to file
+  copy:
+    content: "{{ config.stdout[0] }}"
+    dest: "{{ backup_file }}"
