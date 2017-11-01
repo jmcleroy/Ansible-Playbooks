@@ -1,7 +1,7 @@
 ---
 - name: set backup_path fact
   set_fact:
-    backup_path: "/tmp/backup"
+    backup_path: "/tmp"
 
 - name: create backup paths
   file:
