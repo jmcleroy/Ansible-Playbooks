@@ -15,6 +15,10 @@
     commands: show configuration
   register: config
 
+- name: set backup_file fact
+  set_fact:
+    backup_file: "{{ backup_path }}/{{ inventory_hostname }}/running-config"
+
 - name: write to file
   copy:
     content: "{{ config.stdout[0] }}"
