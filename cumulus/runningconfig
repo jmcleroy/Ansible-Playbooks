@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: run show config commands
+      shell: 'net show config commands | grep net | grep -v dot1x | grep -v "del all" > {{inventory_hostname}}_nclu'
