@@ -7,7 +7,7 @@
     controller: '{{ inventory_hostname }}'
     state: present
     validate_certs: false
-    access_token: rrD7nEDOIdD8sDizFUUyPDBPvietcMH-
+    access_token: PmXxybgKG9Pk6dAPBY_UpjxBpjlZBW4Z
   with_items: "{{ spines }}"
 
 - name: bcf leaf configure
@@ -19,5 +19,5 @@
     controller: '{{ inventory_hostname }}'
     state: present
     validate_certs: false
-    access_token: rrD7nEDOIdD8sDizFUUyPDBPvietcMH-
+    access_token: PmXxybgKG9Pk6dAPBY_UpjxBpjlZBW4Z
   with_items: "{{ leafs }}"
