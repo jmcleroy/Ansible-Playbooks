@@ -2,8 +2,6 @@
 - name: Clone a virtual machine from Template and customize
   vmware_guest:
     hostname: "192.168.1.208"
-    username: "administrator@vsphere.local"
-    password: "{{ vcenter_password }}"
     validate_certs: False
     datacenter: DataCenter
     name: webserver3
@@ -13,4 +11,3 @@
       ip: 192.168.1.144
       netmask: 255.255.255.0
       gateway: 192.168.1.1
-  no_log: True
