@@ -6,7 +6,7 @@
     password: "{{ vcenter_password }}"
     validate_certs: False
     datacenter: DataCenter
-    name: testvm-2
+    name: webserver3
     template: rhel7.4
     networks:
     - name: VM Network
