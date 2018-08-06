@@ -1,12 +1,12 @@
 ---
 - vsphere_guest:
-    vcenter_hostname: 192.168.1.207
+    vcenter_hostname: 192.168.1.208
     username: administrator@vsphere.local
     password: "{{ vcenter_password }}"
     guest: "{{ vm_name }}"
     from_template: yes
-    template_src: rhel7.3
+    template_src: rhel7.4
     esxi:
       datacenter: Datacenter
-      hostname: 192.168.1.203
+      hostname: 192.168.1.182
   no_log: True

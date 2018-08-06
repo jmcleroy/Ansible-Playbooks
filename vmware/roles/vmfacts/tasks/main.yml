@@ -1,6 +1,6 @@
 ---
 - vsphere_guest:
-    vcenter_hostname: 192.168.1.207
+    vcenter_hostname: 192.168.1.208
     username: administrator@vsphere.local
     password: "{{ vcenter_password }}"
     guest: "{{ vm_name }}"
